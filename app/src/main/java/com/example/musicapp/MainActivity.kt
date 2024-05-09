@@ -1,16 +1,12 @@
 package com.example.musicapp
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.musicapp.adapters.CategoryAdapter
 import com.example.musicapp.databinding.ActivityMainBinding
 import com.example.musicapp.models.CategoryModel
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.toObjects
 
 class MainActivity : AppCompatActivity() {
 
