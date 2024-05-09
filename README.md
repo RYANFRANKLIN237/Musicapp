@@ -4,3 +4,4 @@
 - designed main activity
 - built category model to map to firebase
 - built category adapter to bind the views of the categories in recyclerview
+- get songs from firebase into a recyclerview on click of categories
