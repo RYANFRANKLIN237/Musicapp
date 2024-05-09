@@ -1,4 +1,4 @@
-# Categories
+# Categories & Songs
 - connected app to firebase
 - uploaded category images to firebase
 - designed main activity
