@@ -1,4 +1,4 @@
 # Implementing Mediaplayer
-- Implementing exoplayer library to play media content( it can play audio & video)
+- Implementing media player to play media content( it can play audio & video)
 - designed Player activity
 
