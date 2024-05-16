@@ -15,6 +15,7 @@ firebaseFirestore = "25.0.0"
 media3Exoplayer = "1.3.1"
 media3ExoplayerDash = "1.3.1"
 media3Ui = "1.3.1"
+firebaseAuth = "23.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,6 +32,7 @@ google-services = { group = "com.google.gms", name = "google-services", version.
 firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 media3-exoplayer-dash = { module = "androidx.media3:media3-exoplayer-dash", version.ref = "media3ExoplayerDash" }
 media3-ui = { module = "androidx.media3:media3-ui", version.ref = "media3Ui" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
