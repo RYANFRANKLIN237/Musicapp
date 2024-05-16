@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -16,6 +17,7 @@ import com.example.musicapp.adapters.SectionSongLIstAdapter
 import com.example.musicapp.databinding.ActivityMainBinding
 import com.example.musicapp.models.CategoryModel
 import com.example.musicapp.models.SongModel
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.toObjects
@@ -33,6 +35,34 @@ class MainActivity : AppCompatActivity() {
         setupSection("section_1",binding.section1MainLayout,binding.section1Title,binding.section1RecyclerView)
         setupSection("section_2",binding.section2MainLayout,binding.section2Title,binding.section2RecyclerView)
         setupMostlyPlayed("mostly_played",binding.mostlyPlayedMainLayout,binding.mostlyPlayedTitle,binding.mostlyPlayedRecyclerView)
+
+        binding.optionBtn.setOnClickListener {
+            showPopupMenu()
+        }
+    }
+
+    private fun showPopupMenu(){
+        val popupMenu = PopupMenu(this,binding.optionBtn)
+        val inflater = popupMenu.menuInflater
+        inflater.inflate(R.menu.option_menu,popupMenu.menu)
+        popupMenu.show()
+        popupMenu.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.logout -> {
+                    logout()
+                    true
+                }
+            }
+            false
+        }
+    }
+
+    private fun logout(){
+        //stop song when user logout
+        MyExoplayer.getInstance()?.release()
+        FirebaseAuth.getInstance().signOut()
+        startActivity(Intent(this,LoginActivity::class.java))
+        finish()
     }
 
     override fun onResume() {
